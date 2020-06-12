@@ -551,7 +551,7 @@
   NSString* calendarName = [calOptions objectForKey:@"calendarName"];
   NSString* url = [calOptions objectForKey:@"url"];
 
-  [self.commandDelegate runInBackground: ^{
+  //[self.commandDelegate runInBackground: ^{
     EKEvent *myEvent = [EKEvent eventWithEventStore: self.eventStore];
     if (url != (id)[NSNull null]) {
       NSURL* myUrl = [NSURL URLWithString:url];
@@ -642,7 +642,7 @@
       pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:myEvent.eventIdentifier];
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-  }];
+  //}];
 }
 
 - (void) createEventInteractively:(CDVInvokedUrlCommand*)command {
